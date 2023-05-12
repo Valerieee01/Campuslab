@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+ <script>
+    class figura{
+        static cantidad = 0;
+        #color;
+        constructor(color){
+            this.#color = color;
+            ++figura.cantidad;
+        }
+        // get | set
+        set color (nuevoColor){
+            this.#color = nuevoColor;
+        }
+        get color (){
+            return this.#color;
+        }
+        //metodos
+        calcularArea(){};
+        calcularPerimetro(){};
+
+    }
+
+    class Cuadrado extends figura {
+        #lado;
+        constructor (color, lado){
+            super(color);
+            this.#lado = lado;
+        }
+        // get | set
+        set lado (nuevoLado){
+            this.#lado = nuevoLado;
+        }
+        get lado(){
+            return this.#lado;
+        }
+        //metodos
+        calcularArea(){
+            return this.#lado * this.#lado;
+        }
+        calcularPerimetro(){
+            return 4 * this.#lado;
+        }
+
+    }
+
+    class Rectangulo extends figura {
+        #base;
+        #Altura;
+        constructor (color, base, altura){
+            super(color);
+            this.#base = base;
+            this.#Altura = altura;
+        }
+        // get | set
+        set base (nuevobase){
+            this.#base = nuevobase;
+        }
+        get base(){
+            return this.#base;
+        }
+        set altura (nuevoAltura){
+            this.#Altura = nuevoAltura;
+        }
+        get altura(){
+            return this.#Altura;
+        }
+        //metodos
+        calcularArea(){
+            return this.#base * this.#Altura;
+        }
+        calcularPerimetro(){
+            return 2 *(this.#base + this.#base);
+        }
+
+    }
+    
+    class Circulo extends figura {
+        #Radio;
+        constructor (color, Radio){
+            super(color);
+            this.#Radio = Radio;
+            
+        }
+        // get | set
+        set Radio (nuevoRadio){
+            this.#Radio = nuevoRadio;
+        }
+        get Radio(){
+            return this.#Radio;
+        }
+        
+        //metodos
+        calcularArea(){
+            return (this.#Radio**2) * Math.PI;
+        }
+        calcularPerimetro(){
+            return 2 * Math.PI*this.#Radio;
+        }
+
+    }
+
+    class Triangulo extends figura {
+         #lado1;
+         #lado2;
+         #base;
+         #Altura;
+         constructor (color, base, altura, lado1, lado2, ){
+             super(color);
+             this.#base = base;
+             this.#Altura = altura;
+         }
+         // get | set
+         set base (nuevobase){
+             this.#base = nuevobase;
+         }
+         get base(){
+             return this.#base;
+         }
+         set altura (nuevoAltura){
+             this.#Altura = nuevoAltura;
+         }
+         get altura(){
+             return this.#Altura;
+         }
+         set lado1 (nuevolado1){
+             this.#lado1 = nuevolado1;
+         }
+         get lado1(){
+             return this.#lado1;
+         }
+         set lado2 (nuevolado2){
+             this.#lado2 = nuevolado2;
+         }
+         get lado2(){
+             return this.#lado2;
+         }
+         //METODOS
+         calcularArea(){
+             return (this.#base * this.#Altura)/2;
+         }
+         calcularPerimetro(){
+             return (this.#lado1 + this.#lado2 +this.#base);
+
+         }
+     }
+
+
+    class Canva {
+    #background;
+    #alto;
+    #ancho;
+    #figuras;
+    constructor(){ // no se llena el contructor porque lo definimos dentro de el 
+        this.#background="white"
+        this.#alto=800
+        this.#ancho=600
+        this.#figuras=[]
+    }
+    get figuras(){
+        return this.#figuras;
+    }
+    agregarFigura(figura){
+        this.#figuras.push(figura)
+    }
+}
+
+let canva= new Canva();
+console.log("Figuras", canva)
+
+
+let cuadrado1= new Cuadrado("yellow", 3);
+canva.agregarFigura(cuadrado1)
+console.log("figuras", canva.figuras)
+console.log("Area cuadrado", canva.figuras[0].calcularArea());
+
+let circulo= new Circulo("red", 10);
+canva.agregarFigura(circulo);
+console.log(circulo);
+
+let triangulo = new Triangulo ("negro", 10, 5, 2, 3);
+canva.agregarFigura(triangulo);
+console.log(triangulo);
+
+
+for (let figura  of canva.figuras){
+    console.log("Area de ", figura, "es" , figura.calcularArea());
+    console.log("Perimetro de ", figura, "es" , figura.calcularPerimetro())
+}
+
+
+        
+
+
+ </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

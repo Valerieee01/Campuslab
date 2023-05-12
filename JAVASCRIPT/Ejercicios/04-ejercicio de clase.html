@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    
+</head>
+
+<body>
+   
+ 
+      <table class="table" id="tablita">
+        
+      </table>
+    
+    <script>
+      let salarioMinimo = 1160000;
+      function calsalarioBruto (horasTrabajadas ,valorHora) {
+        salarioBruto = horasTrabajadas * valorHora
+        return salarioBruto
+      }
+
+      function calEPS (salarioBruto){
+         EPS = salarioBruto * 0.04
+         return EPS
+      }
+      
+      function calPension (salarioBruto){
+        Pension = salarioBruto * 0.04
+        return Pension
+      }
+
+      function calauxTransporte (salarioBruto, salarioMinimo) {
+        if( salarioBruto >= salarioMinimo ) {
+          var auxTransporte = 0
+          alert (`No aplica auxilio de transporte ${auxTransporte}`);
+        } else {
+          var auxTransporte = 140000
+          alert (`Aplica auxilio de transporte ${auxTransporte}`);
+        }
+        return (auxTransporte) 
+      }
+
+      function calsalarioTotal (salarioBruto, calauxTransporte ,EPS, Pension){
+        salarioTotal = salarioBruto + calauxTransporte - EPS - Pension;
+        return salarioTotal
+      }
+
+
+
+      
+      
+      let cedula = Number(prompt("Ingrese su documento de identidad: "));
+
+      tabla = `<table>
+        <tr>
+          <th scope="col">Cedula</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Horas trabajadas</th>
+          <th scope="col">Salario por hora</th>
+          <th scope="col">Salario bruto</th>
+          <th scope="col">EPS</th>
+          <th scope="col">Pension</th>
+          <th scope="col">Auxilio de transporte</th>
+          <th scope="col">Salario Neto</th>
+        </tr>
+      </table>`
+
+        while (cedula !==0 ){
+            let Nombre = prompt("Ingrese su nombre: ");
+            let horasTrabajadas = Number (prompt("Ingrese las horas trabajadas: "));
+            let valorHora = Number(prompt("Ingrese el valor de la hora: "));
+            salarioBruto = calsalarioBruto (horasTrabajadas ,valorHora);
+            desEPS = calEPS (salarioBruto);
+            desPension = calPension (salarioBruto)
+            aplicaTransporte = calauxTransporte (salarioBruto, salarioMinimo) 
+            salarioTotal = calsalarioTotal (salarioBruto, aplicaTransporte , EPS, Pension)
+
+
+            tabla = tabla + `<tr>
+              <th scope="row">${cedula}</th>
+              <td>${Nombre}</td>
+              <td>${horasTrabajadas}</td>
+              <td>${valorHora}</td>
+              <td>${salarioBruto}</td>
+              <td>${desEPS}</td>
+              <td>${desPension}</td>
+              <td>${aplicaTransporte}</td>
+              <td>${salarioTotal}</td>
+            </tr>`
+
+            cedula = Number(prompt("Ingrese su documento de identidad: "));
+           
+          }
+
+          document.getElementById("tablita").innerHTML = tabla
+            
+    </script>
+   
+   
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

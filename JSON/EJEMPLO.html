@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo USO FECTCH API</title>
+    <style>
+        th{
+            padding-right: 15px;
+        }
+        table{
+            border-color:  black solid 1px ;
+        }
+        img{
+            height: 40px;
+        }
+        #foto{
+            text-align: center;
+        }
+        
+
+    </style>
+</head>
+<body>
+    
+    <h1>Ejemplo uso Fetch API</h1>
+
+    <button id="btntexto">Cragar texto</button>
+    <div id="cargartxt"></div>
+    <hr>
+    <button id="btnJSON">Cargar JSON</button>
+    <div id="cargarJSON">
+        <table border="2" >
+            <thead>
+                <tr>
+                    <th>NOMBRE</th>
+                    <th>EQUIPO</th>
+                    <th>EDAD</th>
+                    <th id="foto">FOTO</th>
+                </tr>
+            </thead>
+            <tbody id="dattable"></tbody>
+        </table>
+    </div>
+
+    <script src="main.js" type="module"></script>
+</body>
+</html>

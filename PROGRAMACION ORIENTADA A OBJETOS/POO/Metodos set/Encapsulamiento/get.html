@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+     
+        class cuenta{
+            static cantidad = 0;
+        constructor(numero, nombre, saldo){
+        this._numero= numero;
+        this._nombre= nombre;
+        this._saldo=saldo;
+        ++cuenta.cantidad
+    }
+    set numero(nuevoNumero){
+        this._numero = nuevoNumero;
+    }
+    get numero(){
+        return this._numero;
+    }
+    set nombre(nuevoNombre){
+        this._nombre = nuevoNombre;
+    }
+    get nombre (){
+        console.log("Get nombre");
+        return this._nombre
+    }
+    set saldo(nuevoSaldo){
+        this._saldo = nuevoSaldo;
+    }
+    get saldo(){
+        console.log("Get Saldo")
+        return this._saldo;
+    }
+    depositar(monto){
+    this.saldo += monto;
+    }
+    girar(monto){
+        if(this.saldo>= monto)
+        this.saldo -=monto
+        else return false
+        
+        return true
+    }
+    consultarSaldo(){
+            return this._saldo;
+    }   
+    static nombreBanco() {
+        return "Campus Bank";
+    }    
+}
+
+
+// const ctaCorrA= new cuentaCorriente(1234, "Juan", 350_000);
+// const ctaCorrB= new cuentaCorriente(9876, "Maria", 950_000);
+// console.log(cuentaCorriente.cantidad);
+// console.log(cuentaCorriente.nombreBanco());
+
+// console.log(ctaCorrA.consultarSaldo())
+// ctaCorrA.depositar(350_000);
+// ctaCorrA.girar(200_000);
+// console.log(ctaCorrA.consultarSaldo())
+// ctaCorrA.nombre = "Valerie"
+// console.log("Nombre: " ,ctaCorrA.nombre);
+
+// console.log("-".repeat(20))
+
+// console.log(ctaCorrB.consultarSaldo())
+// ctaCorrB.depositar(3_050_000);
+// ctaCorrB.girar(0);
+// console.log(ctaCorrB.consultarSaldo())
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=-, initial-scale=1.0">
+    <title>BUscando Elemeto</title>
+</head>
+<body>
+    <p class="parrafo" id="mi-id">Hola este es mi párrafo</p>
+    <p class="parrafo" id="mi-id-dos">Hola este mi párrafo dos</p>
+
+    <ul id="Lista-dínamica">
+        
+    </ul>
+
+    <script>
+        console.log(document.head);
+        console.log(document.body);
+        console.log(document.getElementById("mi-id"));
+        console.log(document.querySelector("#mi-id"));
+        console.log(document.querySelector(".mi-id"));
+        console.log(document.querySelector("p"));
+        console.log(document.querySelectorAll("p"));
+
+        //MODIFICAR ELEMENTOS
+        const parrafo = document.querySelector(".parrafo");
+        parrafo.textContent = "Párrafo dinamico";
+        parrafo.innerHTML = "<b> Listos para el miercoles de test </b>"
+
+        //AGREGAR ELEMNTOS
+        //Elemento donde vamos a incorporar el <li>
+        const lista = document.getElementById("Lista-dínamica");
+
+        //creamos el <li>
+            const li = document.createElement("li")
+
+        //agregamos texto al <li>
+            li.textContent = "Mi <li> dinámico";
+
+        // Finalmente incorporamos al <ul>
+            lista.append(li);
+
+        //FRAGMENT
+        const arrayItem = ["item 1", "item 2", "item 3"];
+
+        //Crear el fragmento
+            const fragment = document.createDocumentFragment();
+            arrayItem.forEach((item) => {
+                const li = document.createElement("li");
+                li.textContent = item;
+                fragment.appendChild(li);
+
+            });
+
+            lista.appendChild(fragment)
+
+    </script>
+</body> 
+</html>

@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+<style>
+    .bg-secondary{
+        border-radius: 20px;   
+    }
+    .bg-light{
+        border-radius: 20px;
+    }
+</style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <form action="" method="post">
+            <div class="row">
+                <div class="col-3">
+                    <label for="codigo">Código: </label>
+                    <input type="number" name="codigo" id="codigo" class="form-control">
+                </div>
+                <div class="col-3">
+                    <label for="descripcion">Descripción: </label>
+                    <input type="text" name="descripcion" id="descripcion" class="form-control">
+                </div>
+                <div class="col-3">
+                    <label for="Pcompra">Precio compra:</label>
+                    <input type="number" name="Pcompra" id="Pcompra" class="form-control">
+                </div>
+                <div class="col-3">
+                    <label for="Pventa">Precio Venta:</label>
+                    <input type="number" name="Pventa" id="Pventa" class="form-control">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6">
+                    <label for="Prenda">Tipo de Producto:</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Seleccione el tipo de Producto</option>
+                        <option value="1">Calzado</option>
+                        <option value="2">Prendas de vestir</option>
+                      </select>
+                </div>
+                <div class="col-6">
+                    <label for="Prenda">Talla prendas de vestir (Si es necesario):</label>
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Seleccione su talla</option>
+                        <option value="6">XS</option>
+                        <option value="5">S</option>
+                        <option value="6">M</option>
+                        <option value="6">l</option>
+                        <option value="6">XL</option>
+
+                      </select>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12">
+                    <label for="tallaZapato">Talla Calzado (Si es necesario):</label>
+                    <input type="number" name="TallaZapato" id="TallaZapato" class="form-control">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                
+                <div class="col-3">
+                    <label for="CanBodega">Cantidad en bodega: </label>
+                    <input type="number" name="CanBodega" id="CanBodega" class="form-control">
+                </div>
+                <div class="col-3">
+                    <label for="CanMinBo">Cantidad minima en bodega: </label>
+                    <input type="number" name="CanMinBo" id="CanMinBo" class="form-control">
+                </div>
+                <div class="col-3">
+                    <label for="CanMaxBo">Cantidad maxima en bodega: </label>
+                    <input type="number" name="CanMaxBo" id="CanMinBo" class="form-control">
+                </div>
+                <div class="col-3">
+                    <label for="porcentaje">Porcentaje de: </label>
+                    <input type="number" name="porcentaje" id="porcentaje" class="form-control">
+                </div>
+            </div>
+            <div class="row">
+                   <div class="col-12">
+                    <input id="boton" type="button" value="Enviar" class="btn btn-warning">
+                   </div> 
+            </div>
+        </form>
+
+        <div class="card">
+
+        </div>
+
+    </div>
+    <script>
+
+        let boton = document.getElementById("boton");
+        boton.addEventListener("click", (el) => {
+            el.preventDefault()
+            let codigo = document.getElementById("codigo").value;
+            let 
+
+        });
+
+        class Producto {
+            #cod;
+            #descripcion;
+            #Pcompra;
+            #Pventa;
+            #CanBodega;
+            #CanMinBo;
+            #CanMaxBo;
+            #Pjdescuento;
+            constructor(cod, descripcion, Pcompra, Pventa, CanBodega, CanMinBo, CanMaxBo, Pjdescuento) {
+                this.#cod = cod;
+                this.#descripcion = descripcion;
+                this.#Pcompra = Pcompra;
+                this.#Pventa = Pventa;
+                this.#CanBodega = CanBodega;
+                this.#CanMinBo = CanMinBo;
+                this.#CanMaxBo = CanMaxBo;
+                this.#Pjdescuento = Pjdescuento;
+            }
+
+            // SET | GET
+            set cod(nuevoCod) {
+                this.#cod = nuevoCod;
+            }
+            get cod() {
+                return this.#cod;
+            }
+            set descripcion(nuevaDescripcion) {
+                this.#descripcion = nuevaDescripcion;
+            }
+            get descripcion() {
+                return this.#descripcion;
+            }
+            set Pcompra(nuevoPcompra) {
+                this.#Pcompra = nuevoPcompra;
+            }
+            get Pcompra() {
+                return this.#Pcompra;
+            }
+            set Pventa(nuevaPventa) {
+                this.#Pventa = nuevaPventa;
+            }
+            get Pventa() {
+                return this.#Pventa;
+            }
+            set CanBodega(NuevaCanBodega) {
+                this.#CanBodega = NuevaCanBodega;
+            }
+            get CanBodega() {
+                return this.#CanBodega;
+            }
+            set CanMinBo(NuevaCanMinBo) {
+                this.#CanMinBo = NuevaCanMinBo;
+            }
+            get CanMinBo() {
+                return this.#CanMinBo;
+            }
+            set CanMaxBo(NuevaCanMaxBo) {
+                this.#CanMaxBo = NuevaCanMaxBo;
+            }
+            get CanMaxBo() {
+                return this.#CanMaxBo;
+            }
+            set Pjdescuento(NuevaPjdescuento) {
+                this.#Pjdescuento = NuevaPjdescuento;
+            }
+            get Pjdescuento() {
+                return this.#Pjdescuento;
+            }
+            //METODOS
+            
+            solicitarPedido() {
+                return this.CanBodega < this.CanMinBo;
+            }
+
+            calcularTotalAPagar(cant) {
+                return this.Pcompra * cant;
+            }
+
+            mostrar() {
+                const colorCard = this.solicitarPedido() ? 'bg-secondary' : 'bg-light';
+                return `
+                <div class="card ${colorCard} mb-3">
+                    <div class="card-body">
+                    <h5 class="card-title">${this.#cod} - ${this.#descripcion}</h5>
+                    <p class="card-text">Precio de compra: $${this.#Pcompra}</p>
+                    <p class="card-text">Precio de venta: $${this.#Pventa}</p>
+                    <p class="card-text">Cantidad en bodega: ${this.#CanBodega}</p>
+                    <p class="card-text">Cantidad mínima requerida: ${this.#CanMinBo}</p>
+                    <p class="card-text">Cantidad máxima permitida: ${this.#CanMaxBo}</p>
+                    <p class="card-text">Porcentaje de descuento: ${this.#Pjdescuento}%</p>
+                    </div>
+                </div>
+                `;
+            }
+            }
+
+        class PrendasDeVestir extends Producto {
+            #Talla
+            #planchado
+            constructor(cod, descripcion, Pcompra, Pventa, CanBodega, CanMinBo, CanMaxBo, Pjdescuento, Talla, Plachado) {
+                super(cod, descripcion, Pcompra, Pventa, CanBodega, CanMinBo, CanMaxBo, Pjdescuento)
+                this.#Talla = Talla;
+                this.#planchado = Plachado;
+            }
+            // SET | GET
+            set Talla(nuevaTalla) {
+                this.#Talla = Talla;
+            }
+            get Talla() {
+                return this.#Talla;
+            }
+            set Plachado(nuevoPlanchado) {
+                this.#planchado = Plachado;
+            }
+            get Plachado() {
+                return this.#planchado;
+            }
+            //METODOS
+            mostrar() {
+            return `
+            ${super.mostrar()}
+            <p class="card-text">Talla: ${this.#Talla}</p>
+            <p class="card-text">Permite planchado: ${this.#planchado ? 'Sí' : 'No'}</p>
+            `;
+        }
+
+        }
+        
+
+        class Calzado extends Producto {
+            #TallaC;
+            constructor(cod, descripcion, Pcompra, Pventa, CanBodega, CanMinBo, CanMaxBo, Pjdescuento, TallaC) {
+                super(cod, descripcion, Pcompra, Pventa, CanBodega, CanMinBo, CanMaxBo, Pjdescuento)
+                this.#TallaC = TallaC;
+            }
+            // SET | GET
+            set TallaC(nuevoTallaC) {
+                this.#TallaC = TallaC;
+            }
+            get TallaC() {
+                return this.#TallaC;
+            }
+            //METODOS
+            mostrar() {
+            return `
+            ${super.mostrar()}
+            <p class="card-text">Talla: ${this.#TallaC}</p>
+            `;
+        }
+
+        }
+
+
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

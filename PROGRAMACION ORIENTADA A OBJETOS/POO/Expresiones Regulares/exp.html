@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <script>
+    //Operadores de corto circuito. Se presentan con el || OR(valor izquierda es falso, se mostrará el del otro lado) o && AND(valor de la izquiera sea flaso se mostrará).
+//                             Curso JavaScript: 29. Operador de Cortocircuito
+
+//                             EXPRESIONES REGULARES
+// \t — Representa un tabulador.
+// \r — Representa el "retorno de carro" o "regreso al inicio" o sea el lugar en que la línea vuelve a iniciar.
+// \n — Representa la "nueva línea" el carácter por medio del cual una línea da inicio. Es necesario recordar que en Windows es necesaria una combinación de \r\n para comenzar una nueva línea, mientras que en Unix solamente se usa \n y en Mac_OS clásico se usa solamente \r.
+// \a — Representa una "campana" o "beep" que se produce al imprimir este carácter.
+// \e — Representa la tecla "Esc" o "Escape"
+// \f — Representa un salto de página
+// \v — Representa un tabulador vertical
+// \x — Se utiliza para representar caracteres ASCII o ANSI si conoce su código. De esta forma, si se busca el símbolo de derechos de autor y la fuente en la que se busca utiliza el conjunto de caracteres latín-1 es posible encontrarlo utilizando \xA9".
+// \u — Se utiliza para representar caracteres Unicode si se conoce su código. "\u00A2" representa el símbolo de centavos. No todos los motores de Expresiones Regulares soportan Unicode. El .Net Framework lo hace, pero el EditPad Pro no, por ejemplo.
+// \d — Representa un dígito del 0 al 9.
+// \w — Representa cualquier carácter alfanumérico.
+// \s — Representa un espacio en blanco.
+// \D — Representa cualquier carácter que no sea un dígito del 0 al 9.
+// \W — Representa cualquier carácter no alfanumérico.
+// \S — Representa cualquier carácter que no sea un espacio en blanco.
+// \A — Representa el inicio de la cadena. No un carácter sino una posición.
+// \Z — Representa el final de la cadena. No un carácter sino una posición.
+// \b — Marca la posición de una palabra limitada por espacios en blanco, puntuación o el inicio/final de una cadena.
+// \B — Marca la posición entre dos caracteres alfanuméricos o dos no-alfanuméricos.
+// \Q y \E — Se interpreta como literal todo lo que vaya entre estas dos marcas. Ejemplo: "\Q.*\E" se interpreta como el literal ".*"
+
+
+
+
+let cadena= "Lorem ipsum dolor sit lorem,cons lorem adipisicing elit. Cum provident magni hic .";
+
+let expresion= new RegExp("lorem","ig")//La palabra a evaluar y las banderas que son prederterminadas
+//la bandera i ignora may y min, la bandera g toma todas la palabras que sean lorem.
+console.log(expresion.test(cadena));
+console.log(expresion.exec(cadena));
+
+
+let expresiones2= /lorem/ig;
+console.log(expresiones2.test(cadena));
+console.log(expresiones2.exec(cadena));
+//  TEST---DE ESTA MANERA SOLO RETORNA FALSE O TRUE
+//  EXEC---DE ESTA MANERA RETORNA UN ARREGLO CON ESPECIFICACIONES.
+
+let expresiones3= /[0-9]/ig;//en la cadena hay numeros del 0 al 9?
+console.log(expresiones3.test(cadena))//false
+
+let expresiones4= /\d/ig;  //en la cadena hay numeros del 0 al 9?
+console.log(expresiones3.test(cadena))//false
+
+  </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

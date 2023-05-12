@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <br>
+        <h1>LIBRERIA</h1>
+        <form action="" method="post" name="MiFormulario">
+            <br><br>
+            <div class="row">
+                <div class="col-6">
+                    <label for="date1"> Fecha Entrega Pactada:</label>
+                    <input class="form-control" type="date" name="fechaEntrega" id="fechaEntrega">
+                </div>
+                <div class="col-6">
+                    <label for="date2"> Fecha Entrega Real:</label>
+                    <input class="form-control" type="date" name="fechaEntregaReal" id="fechaEntrega">
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-12">
+                    <input id="boton" type="button" value="Enviar" class="btn btn-primary" onclick="" >
+                </div>
+            </div>
+        </form>
+        <br><br><br>
+        <h2 id="multa">Valor multa:</h2>
+        <h2 id="retraso">Días de retraso: </h2>
+    </div>
+
+    <script>
+        function calcularFecha(){
+            if (fecha1 <= 3){
+                multa = 7000
+            }
+        }
+
+    let boton = document.getElementById("boton")
+       boton.addEventListener("click", (e) => {
+            e.preventDefault();
+            let fecha1 = document.getElementById("fechaEntrega").value;
+            let fecha2 = document.MiFormulario.fechaEntregaReal.value;
+            
+       })
+
+
+
+       
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+        </script>
+</body>
+
+</html>

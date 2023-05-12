@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+
+    <script>
+        const ahora = new Date();
+        console.log(ahora)
+
+        const ramdomdate = new Date (2015,3,12,5,25,58);
+        console.log(ramdomdate);
+
+        const date2 = new Date (1995, 7, 27);
+        console.log(date2);
+
+
+        //llenar la fecha individual
+        const ahora2 = new Date();
+        ahora2.setFullYear(2014);
+        ahora2.setMonth(3);
+        ahora2.setDate(4);
+        console.log(ahora2);
+
+        //Obtener 
+        const ahora3 = new Date();
+        console.log(ahora3.getMonth());
+        console.log(ahora3.getDay());
+        console.log(ahora3.getFullYear());
+
+        //String de la fecha
+        const now = new Date()
+        console.log(now.toDateString())
+        console.log(now.toTimeString())
+        console.log(now.toLocaleString())
+        console.log(now.getTime())
+
+        //Ejemplo
+        const now2 = new Date();
+        const Before = new Date("october 8 2019 16:30:00");
+        const diff = now2.getTime() - Before.getTime();
+        console.log(diff);
+
+        // ejemplo 2
+        const minutes = Math.round(diff / 1000 / 60);
+        const hours = Math.round(minutes / 60);
+        const days = Math.round(hours / 60);
+        console.log(minutes, hours, days);
+        console.log(`this post was written ${days} ago`)
+
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+ <div class="container">
+    <div class="row mt-3">
+        <div class="col-12">
+            <h1>Servicios del agua</h1>
+        </div>
+    </div>
+
+    <form action="">
+        <div class="row">
+            <div class="col-12">
+                <label for="" class="form-label">Nombre: </label>
+                <input type="text" class="form-control" name="nombre" id="nombre" aria-describedby="agregarnombre" placeholder="">
+                <label for="" class="form-label">Estado: </label>
+                <select class="form-select" aria-label="Default select example" id="estado">
+                    <option selected>Seleccione</option>
+                    <option value="1">Activo</option>
+                    <option value="2">Suspendido</option>
+                  </select>
+                <label for="" class="form-label">Estrato: </label>
+                <select class="form-select" aria-label="Default select example" id="estrato">
+                    <option selected>Seleccione</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-12">
+                <button type="button" class="btn btn-outline-dark" id="boton">Calcular</button>
+            </div>
+        </div>
+    </form>
+    <br>
+    <div class="table-responsive">
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Estado</th>
+                    <th scope="col">Estrato</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpo">
+        
+            </tbody>
+        </table>
+    </div>
+    
+
+
+ </div>
+
+
+
+
+
+<script src="ACUM.JS"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

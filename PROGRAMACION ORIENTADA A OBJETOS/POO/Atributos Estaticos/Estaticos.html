@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  
+    <script>
+        // console.log(Math.random() * 10 + 1);
+        // console.log(Math.PI);
+        // console.log(Math.floor(Math.random() * 10 + 1));
+        // console.log(Number.MAX_SAFE_INTEGER);
+        // console.log(Number.EPSILON);
+
+        //Acceder sin crear ninguna instancia
+        class MiMath {
+            static cuadrado (number) {
+                return number * number;
+            }
+        }
+       console.log(MiMath.cuadrado(5));
+       
+
+
+       //Ejemplo
+
+    class Cuenta{
+        static cantidad = 0;
+    constructor(numero, nombre, saldo){
+    this._numero= numero;
+    this._nombre= nombre;
+    this._saldo=saldo;
+    ++Cuenta.cantidad
+    }
+    set numero(nuevoNumero){
+        this._numero = nuevoNumero;
+    }
+    get numero(){
+        return this._numero;
+    }
+    set nombre(nuevoNombre){
+        this._nombre = nuevoNombre;
+    }
+    get nombre (){
+        console.log("Get nombre");
+        return this._nombre
+    }
+    set saldo(nuevoSaldo){
+        this._saldo = nuevoSaldo;
+    }
+    get saldo(){
+        console.log("Get Saldo")
+        return this._saldo;
+    }
+    depositar(monto){
+    this.saldo += monto;
+    }
+    girar(monto){
+        if(this.saldo>= monto)
+        this.saldo -=monto
+        else return false
+        
+        return true
+    }
+    consultarSaldo(){
+            return this._saldo;
+    }   
+    static nombreBanco() {
+        return "Campus Bank";
+    }    
+}
+
+class CuentaAhorro extends Cuenta {
+
+}
+ let ctAh1 = new CuentaAhorro (789, "mariana", 1200000);
+ ctAh1.depositar(1_200_000);
+ console.log(ctAh1.consultarSaldo());
+ console.log(CuentaAhorro.cantidad);
+
+ class CuentaCorriente extends Cuenta {
+    static cantidad = 0;
+    constructor (numero,nombre, saldo = 0, topeCredito){
+        super(numero, nombre, saldo);
+        this._topeCredito  = topeCredito;
+        if (this._topeCredito === undefined){
+            this._topeCredito = 0;
+        }
+         ++CuentaCorriente.cantidad;
+    }
+
+    // set | get
+
+    set topeCredito(nuevoTope){
+        this._topeCredito;
+    }
+    get topeCredito(){
+        return this._topeCredito;
+    }
+
+    //Metodo de la clase
+    girar(monto){
+        let tsaldo = this._saldo
+        tsaldo -= monto;
+        if (tsaldo >= -this._topeCredito){
+            this._saldo = tsaldo;
+            return true;
+        }
+        return false;
+    }
+
+ }
+
+ class Persona{
+    static cantPersonas=0
+    constructor(tipo,nombre,tipoIdentificacion,numIdentificacion,telefono,cuenta){
+        this.Tipo= tipo;
+        this.Nombre=nombre;
+        this.TipoIdentificacion=tipoIdentificacion;
+        this.NumIdentificacion=numIdentificacion;
+        this.Telefono=telefono;
+        this.Cuenta=cuenta;
+
+        ++Persona.cantPersonas
+    }
+
+    set tipo(nuevoTipo){
+        this.Tipo=nuevoTipo
+    }
+
+    get tipo(){
+        return this.Tipo
+    }
+
+    set nombre(nuevoNombre){
+        this.Nombre=nuevoNombre
+    }    
+    get nombre(){
+        return this.Nombre
+    }
+
+    set tipoIdentificacion(nuevoIdentificacion){
+        this.TipoIdentificacion=nuevoIdentificacion
+    }
+    get tipoIdentificacion(){
+        return  this.TipoIdentificacion
+    }
+    set numIdentificacion(nuevoNumIdentificacion){
+        this.NumIdentificacion=nuevoNumIdentificacion
+    }
+    get numIdentificacion(){
+        return  this.NumIdentificacion
+    }
+    set telefono(nuevoTelefono){
+        this.Telefono=nuevoTelefono
+    }
+    get telefono(){
+        return  this.Telefono
+    }
+    set cuenta(nuevoCuenta){
+        this.Cuenta=nuevoCuenta
+    }
+    get cuenta(){
+        return  this.Cuenta
+    }
+}
+
+let ejemplo= new cuentaCorriente(753, "Daniela", 2_000_000, 2_000_000);
+
+let p2= new Persona("natural", "Daniela","CC", 1234, 12345656, ejemplo);
+
+p2.cuenta.girar(2_500_000);
+p2.cuenta.depositar(500_000);
+p2.cuenta.girar(7_000_000);
+console.log(p2.cuenta.consultarSaldo());
+
+class Natural extends Persona{
+    static cantPersonas=0
+    constructor(tipo,nombre,tipoIdentificacion,numIdentificacion,telefono,cuenta,sexo){
+    super(tipo,nombre,tipoIdentificacion,numIdentificacion,telefono,cuenta);
+
+        this._sexo=sexo;
+
+    ++Natural.cantPersonas
+
+    }
+    set sexo(nuevoSexo){
+        this._sexo=nuevoSexo
+    }
+    get sexo(){
+        return this._sexo
+    }
+}
+
+let ejemplo2= new cuentaCorriente(123,"Jose", 30_000, 10_000);
+
+let ultEjemplo= new Natural("f")
+
+let ejemPersona= new Persona(ultEjemplo, "Jose Alberto","CC", 1234, 12345656, ejemplo2);
+
+// console.log(ultEjemplo.sexo)
+console.log(Persona.cantPersonas)
+
+
+
+class Juridica extends Persona{
+    static cantPersonas=0
+    constructor(){
+    super(tipo,nombre,tipoIdentificacion,numIdentificacion,telefono,cuenta);
+
+    ++Juridica.cantPersonas
+
+    }
+
+}
+ 
+
+
+//  let ctaC = new CuentaCorriente (753, "Daniela", 2_000_000, 2_000_000);
+//  ctaC.girar(2_500_000);
+//  ctaC.depositar(500_000);
+//  ctaC.girar(7_000_000);
+//  console.log("saldo", ctaC.consultarSaldo());
+//  console.log("Cuentas creadas: ",Cuenta.cantidad);
+//  console.log("Cuentas creadas: ",CuentaCorriente.cantidad);
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

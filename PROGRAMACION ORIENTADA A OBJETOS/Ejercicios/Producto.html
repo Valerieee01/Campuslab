@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="" method="post">
+                    <label for="codigo">Codigo: </label>
+                    <input type="text" name="codigo" id="codigo" class="form-control">
+                    <label for="precio">Precio Compra: </label>
+                    <input type="text" name="precio" id="precio" class="form-control">
+                    <label for="cantBodega">Cantidad de bodega: </label>
+                    <input type="text" name="cantBodega" id="cantBodega" class="form-control">
+                    <label for="CantMinBodega">Caontidad Minima de Bodega: </label>
+                    <input type="text" name="CantMinBodega" id="CantMinBodega" class="form-control">
+                    <br>
+                    <input type="button" id="boton" value="Enviar" class="btn btn-info">
+                </form>
+            </div>
+           <div class="row">
+            <div class="col-12">
+                    <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Header</div>
+                        <div class="card-body">
+                        <h5 class="card-title">Success card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let VProducto = [];
+        let boton = document.getElementById("boton");
+        boton.addEventListener("click", () => {
+            let Codigo = Number(document.getElementById("codigo").value);
+            let Precio = Number(document.getElementById("precio").value);
+            let Bodega = Number(document.getElementById("cantBodega").value);
+            let minBodega = Number(document.getElementById("CantMinBodega").value);
+            const Prueba = new Producto (Codigo,Precio,Bodega,minBodega)
+            console.log(Prueba.SolicitarPedido());
+            VProducto.push(Prueba)
+            console.log(VProducto)
+
+            
+
+            document.getElementById("codigo").value = "";
+            document.getElementById("precio").value = "";
+            document.getElementById("cantBodega").value = "";
+            document.getElementById("CantMinBodega").value = "";
+
+
+
+        })
+
+        class Producto{
+            constructor (cod,PreCom, CntBode, CntMinBode){
+                this._Codigo = cod;
+                this._PrecioCom = PreCom;
+                this._CantBodega = CntBode;
+                this._CantMinBodega = CntMinBode;
+            }
+            set codigo (nuevoCodigo){
+                this._Codigo = nuevoCodigo;
+            }
+            set precio(nuevoPrecio){
+                this._PrecioCom = nuevoPrecio;
+            }
+            get precio(){
+                return this._PrecioCom;
+            }
+            set CantBodega(nuevoCantBodega){
+                this._CantBodega = nuevoCantBodega;
+            }
+            get CantBodega(){
+                return this._CantBodega
+            }
+            set CantMinBodega(nuevoCantMinBodega){
+                this._CantMinBodega = nuevoCantMinBodega;
+            }
+            get CantMinBodega(){
+                return this._CantMinBodega
+            }
+            
+            SolicitarPedido(){
+                if (this.CantBodega < this.CantMinBodega){
+                    return true;
+                } else {
+                    return false
+                }
+            }
+
+        }
+        
+        //const Prueba = new Producto (Codigo,Precio,Bodega,minBodega);
+        
+    </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

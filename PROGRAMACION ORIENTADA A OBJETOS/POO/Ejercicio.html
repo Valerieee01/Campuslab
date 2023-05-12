@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class solucion{
+    constructor(numero){
+        this.numero=numero
+    }
+    parImpar(numero){
+        if(this.numero%2===0){
+            console.log(`El numero ${this.numero} es par `)
+        }
+        else if (this.numero%2!==0){
+            console.log(`El numero ${this.numero} es impar`)
+        }
+    }
+    posNeg(numero){
+        if(this.numero>0){
+            console.log(`EL número ${this.numero} es positivo`)
+        }
+        else if(this.numero<0){
+            console.log(`El número ${this.numero} es negativo`)
+        }
+    }
+    primo(numero) {
+        if(this.numero < 2) {
+          return console.log(`El número ${this.numero} no es primo`);
+        }
+        for(let i = 2; i < this.numero; i++) {
+          if(this.numero % i === 0) {
+           return console.log(`El número ${this.numero} no es primo`);
+          }
+        }
+        console.log(`El número ${this.numero} es primo`);
+      }
+
+}
+
+const numerito= new solucion(7);
+
+console.log(numerito.parImpar())
+console.log(numerito.posNeg())
+console.log(numerito.primo())
+
+
+
+    </script>
+</body>
+</html>

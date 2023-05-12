@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <script>
+        
+        //Crea un nuevo conjunto
+        const LETRAS = new Set (["a","b","c","d"])
+        console.log(LETRAS)
+        //aGREGAR ELEMENTOS 
+        const LETRAS2 = new Set ();
+        LETRAS2.add("a");
+        LETRAS2.add("b");
+        LETRAS2.add("c");
+        LETRAS2.add("d");
+        console.log(LETRAS2);
+        //Eliminar elementos
+        LETRAS.delete("c");
+        //Verificar elemento existente true or false
+        console.log(LETRAS.has("c")? "Existe": "No Existe");
+        console.log(LETRAS.has("d")); //devueleve true or false;
+        //Mostrar la cantidad de letras en u conjunto
+        console.log(LETRAS.size);
+        //Iterar el conjunto con FOREACH
+        let str = "";
+        LETRAS.forEach(letra => {
+            str += letra + ",";
+        })
+        console.log(str);
+        // Iterar un conjunto con un for ... of
+        console.log(LETRAS.values());
+        str = "";
+        for(let letra of LETRAS.values()){
+            str += letra + ","
+        }
+        console.log(str);
+
+    </script>
+
+   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

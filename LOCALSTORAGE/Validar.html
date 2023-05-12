@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>Title</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+
+<body>
+  
+    
+        <div class="container">
+            <h1>Ejemplo LocalStorage</h1>
+            <div class="row">
+                <div class="col-12">
+                    <form action="" method="post">
+                        <input type="text" name="Nombre" id="Nombre" class="form-control" placeholder="Nombre"><br>
+                        <input type="text" name="Apellido" id="Apellido" class="form-control" placeholder="Apellido"><br>
+                        <input type="button" value="Guardar" id="guardar" class="btn btn-warning">
+                    </form>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-12">
+                    <label for="NomAlamacenado" id="name">Nombre Alamacenado:</label> 
+                   
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <label for="ApeAlmacenado" id="lastname">Apellido Almacenado:</label>
+                   
+                </div>
+            </div>
+     <br>
+            <input type="button" value="Cargar Elementos" id="cargar" class="btn btn-warning">
+        </div>
+        <script>
+          
+            let botonCargar = document.getElementById("cargar");
+            let boton = document.getElementById("guardar");
+            boton.addEventListener("click", () => {
+                let nombre = document.getElementById("Nombre").value;
+                let apellido = document.getElementById("Apellido").value;
+                sessionStorage.setItem("Nombre", nombre);
+                sessionStorage.setItem("Apellido", apellido);
+                document.getElementById("Nombre").value = "";
+                document.getElementById("Apellido").value = "";
+            });
+    
+            botonCargar.addEventListener("click", () => {
+                document.getElementById("name").innerHTML = "Nombre Alamacenado:" + " " + sessionStorage.getItem("Nombre");
+                document.getElementById("lastname").innerHTML = "Apellido Almacenado:" + " " +sessionStorage.getItem("Apellido");
+                
+            });
+    
+             
+        </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>
